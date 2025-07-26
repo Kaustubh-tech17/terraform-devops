@@ -29,7 +29,7 @@ pipeline {
                 withCredentials([aws(credentialsId: 'aws-terraform-creds')]) {
                        // Run command in the root of the workspace
                   sh 'terraform init -input=false'
-                    }
+                   // }
                 }
             }
         }
