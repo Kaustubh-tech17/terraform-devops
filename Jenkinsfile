@@ -27,9 +27,8 @@ pipeline {
             steps {
                 // Securely load credentials for this stage
                 withCredentials([aws(credentialsId: 'aws-terraform-creds')]) {
-                    // Change to the correct directory for this stage
-                    dir("environments/${params.ENVIRONMENT}") {
-                        sh 'terraform init -input=false'
+                       // Run command in the root of the workspace
+                  sh 'terraform init -input=false'
                     }
                 }
             }
