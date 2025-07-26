@@ -37,9 +37,9 @@ pipeline {
         stage('Terraform Plan') {
             steps {
                 withCredentials([aws(credentialsId: 'aws-terraform-creds')]) {
-                    dir("environments/${params.ENVIRONMENT}") {
+                    //dir("environments/${params.ENVIRONMENT}") {
                         sh 'terraform plan -out=tfplan -input=false'
-                    }
+                   // }
                 }
             }
         }
