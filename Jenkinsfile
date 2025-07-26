@@ -58,7 +58,7 @@ pipeline {
         stage('Terraform Apply or Destroy') {
             steps {
                 withCredentials([aws(credentialsId: 'aws-terraform-creds')]) {
-                    dir("environments/${params.ENVIRONMENT}") {
+                   
                         script {
                             if (params.ACTION == 'apply') {
                                 sh 'terraform apply -auto-approve tfplan'
@@ -67,7 +67,6 @@ pipeline {
                                 sh 'terraform destroy -auto-approve'
                             }
                         }
-                    }
                 }
             }
         }
