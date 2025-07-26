@@ -16,12 +16,12 @@ pipeline {
 
     stages { // The one, main stages block
 
-        stage('Checkout') {
-            steps {
+       // stage('Checkout') {
+        //    steps {
                 // IMPORTANT: Make sure this URL is correct
-                git 'https://github.com/Kaustubh-tech17/terraform-devops.git'
-            }
-        }
+              //  git 'https://github.com/Kaustubh-tech17/terraform-//devops.git'
+ //           }
+ //       }
 
         stage('Terraform Init') {
             steps {
